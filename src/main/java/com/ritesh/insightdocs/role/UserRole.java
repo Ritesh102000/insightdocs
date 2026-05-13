@@ -1,7 +1,8 @@
-package com.ritesh.insightdocs.model;
+package com.ritesh.insightdocs.role;
 
 import java.util.UUID;
 
+import com.ritesh.insightdocs.user.User;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

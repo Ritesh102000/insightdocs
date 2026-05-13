@@ -1,7 +1,8 @@
-package com.ritesh.insightdocs.model;
+package com.ritesh.insightdocs.role;
 
 import java.util.UUID;
 
+import com.ritesh.insightdocs.organization.Organization;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

@@ -1,4 +1,4 @@
-package com.ritesh.insightdocs.model;
+package com.ritesh.insightdocs.organization;
 
 public enum OrgPlan {
     FREE(10,10,100),

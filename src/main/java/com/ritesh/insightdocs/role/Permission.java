@@ -1,4 +1,4 @@
-package com.ritesh.insightdocs.model;
+package com.ritesh.insightdocs.role;
 
 //This is a enum acts like a class 
 public enum Permission {

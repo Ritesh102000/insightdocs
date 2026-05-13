@@ -1,4 +1,4 @@
-package com.ritesh.insightdocs.model;
+package com.ritesh.insightdocs.user;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -8,8 +8,6 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -19,36 +17,41 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
+                            
 @Entity
-@Table(name = "organizations")
 @Getter
 @Setter
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Organization {
-
+@Builder
+@Table(name = "users")
+public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue(strategy =  GenerationType.UUID)
     private UUID id;
 
-    @Column(nullable = false, unique = true, length = 100)
-    private String name;
+    @Column(nullable = false,unique = true,length = 200)
+    private String email;
+
+    @Column(nullable = false,unique = false)
+    private String password;
+
+    @Column(nullable = false,unique = false)
+    private String fullName;
+
+    @Column(nullable = false,unique = true)
+    private String nickName;
+
+    @Column(nullable = false,unique = false)
+    private String countryCode;
+
+    @Column(nullable = false,unique = true,length = 10)
+    private String number;
 
     @CreationTimestamp
     private LocalDateTime createdAt;
 
     @UpdateTimestamp
     private LocalDateTime updatedAt;
-    
-    @Column(nullable = true,unique = false,length = 1000)
-    private String description;
 
-    @Column(nullable = false)
-    private UUID ownerId;
-
-    @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
-    private OrgPlan plan;
 }
