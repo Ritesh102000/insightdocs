@@ -28,6 +28,12 @@ public class AuthService {
         if(userRepository.existsByEmail(request.getEmail())){
             throw new UserAlreadyExistsException("Email already exists.");
         }
+        if(userRepository.existsByNumber(request.getNumber())){
+            throw new UserAlreadyExistsException("Number already exists.");
+        }
+        if(userRepository.existsByNickName(request.getNickName())){
+            throw new UserAlreadyExistsException("Nickname already exists.");
+        }
 
         if (userRepository.existsByNickName(request.getNickName())) {
         throw new UserAlreadyExistsException("Nickname already taken");
