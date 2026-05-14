@@ -13,6 +13,8 @@ import com.ritesh.insightdocs.security.dto.AuthResponse;
 import com.ritesh.insightdocs.security.dto.LoginRequest;
 import com.ritesh.insightdocs.security.dto.SignupRequest;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
@@ -24,12 +26,12 @@ public class AuthController {
     }
 
     @PostMapping("/signup")
-    public AuthResponse signup(@RequestBody SignupRequest request) {
+    public AuthResponse signup(@Valid @RequestBody SignupRequest request) {
         return authService.SignUp(request);
     }
 
     @PostMapping("/login")
-    public AuthResponse login(@RequestBody LoginRequest request) {
+    public AuthResponse login(@Valid @RequestBody LoginRequest request) {
         return authService.LogIn(request);
     }
 

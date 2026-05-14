@@ -3,6 +3,7 @@ package com.ritesh.insightdocs.security;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ritesh.insightdocs.exception.InvalidCredentialsException;
 import com.ritesh.insightdocs.exception.UserAlreadyExistsException;
